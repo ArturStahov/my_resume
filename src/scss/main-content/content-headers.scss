@@ -1,0 +1,31 @@
+.content-headers {
+  width: 100%;
+  background-color: $second-page-color;
+}
+
+.content-header-tab {
+  display: flex;
+  align-items: baseline;
+  padding: 15px 10px 15px 20px;
+  width: max-content;
+  background-color: $first-page-color;
+  &::before {
+    content: 'JS';
+    @include font-settings(1rem, 1.2, 700, $deco-content-header-title);
+    margin-right: 20px;
+  }
+  &::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-image: url(../images/ico/marck_2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.content-header-tab_title {
+  margin-right: 20px;
+  @include font-settings(1rem, 1.2, 500, $content-header-title);
+}

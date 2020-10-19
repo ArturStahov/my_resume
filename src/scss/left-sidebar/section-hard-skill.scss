@@ -1,0 +1,81 @@
+.section-hard-skill {
+  padding-bottom: 1.875rem;
+}
+
+.hard-skill-item {
+  position: relative;
+  @include font-settings(0.8rem, 1.2, 500, $sidebar-section-title);
+  text-transform: uppercase;
+  &:not(:last-child) {
+    margin-bottom: 1.5625rem;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -40px;
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  &.ico-html5::before {
+    background-image: url(../images/ico/skill-ico/html.png);
+  }
+  &.ico-css3::before {
+    background-image: url(../images/ico/skill-ico/css.png);
+  }
+  &.ico-js::before {
+    background-image: url(../images/ico/skill-ico/javascript_icon.png);
+  }
+  &.ico-C::before {
+    background-image: url(../images/ico/skill-ico/csharp_original_logo_icon.png);
+  }
+  &.ico-bootstrap::before {
+    background-image: url(../images/ico/skill-ico/bootstrap_ico.png);
+  }
+  &.ico-graph::before {
+    background-image: url(../images/ico/skill-ico/logo-opengraph.png);
+  }
+  &.ico-git::before {
+    background-image: url(../images/ico/gitcola_102985.png);
+  }
+  &.ico-ajax::before {
+    background-image: url(../images/ico/skill-ico/AJAX_logo_by_gengns.png);
+  }
+  &.ico-sass::before {
+    background-image: url(../images/ico/skill-ico/sass.png);
+  }
+  &.ico-webpack::before {
+    background-image: url(../images/ico/skill-ico/webpack.png);
+  }
+  &.ico-gulp::before {
+    background-image: url(../images/ico/skill-ico/gulp.png);
+  }
+  &.ico-json::before {
+    background-image: url(../images/ico/skill-ico/json-ico.png);
+  }
+  &.ico-npm::before {
+    background-image: url(../images/ico/skill-ico/npm_icon.png);
+  }
+  &.ico-react::before {
+    background-image: url(../images/ico/skill-ico/react_ico.png);
+  }
+  &.ico-redux::before {
+    background-image: url(../images/ico/skill-ico/redux_ico.png);
+  }
+  &.ico-node::before {
+    background-image: url(../images/ico/skill-ico/nodejs_ico.png);
+  }
+}
+
+.hard-skill-block {
+  max-width: 300px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40px;
+  margin: 0 auto;
+}

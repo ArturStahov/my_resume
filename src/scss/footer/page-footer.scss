@@ -1,0 +1,40 @@
+.footer-title {
+  @include font-settings(1rem, 1.2, 600, $footer-title);
+  text-transform: uppercase;
+  padding-left: 45px;
+  margin-bottom: 10px;
+}
+@keyframes anim_settings_button {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+.footer-cntrl {
+  position: relative;
+
+  &::before {
+    @media screen and (min-width: 1024px) {
+      content: '';
+      display: block;
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      top: -46px;
+      left: -43px;
+      background-image: url(../images/ico/setting-ico.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      animation-play-state: running;
+      animation-name: anim_settings_button;
+      animation-duration: 7s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-fill-mode: forwards;
+    }
+  }
+}

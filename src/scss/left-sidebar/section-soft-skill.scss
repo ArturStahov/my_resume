@@ -1,0 +1,49 @@
+.section-soft-skill {
+  padding-bottom: 1.875rem;
+}
+
+.soft-skill-item {
+  position: relative;
+  @include font-settings(0.8rem, 1.2, 500, $sidebar-section-title);
+  text-transform: uppercase;
+  &:not(:last-child) {
+    margin-bottom: 1.5625rem;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -40px;
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &.ico-communication::before {
+    background-image: url(../images/ico/skill-ico/comunications-ico.jpg);
+  }
+  &.ico-teamwork::before {
+    background-image: url(../images/ico/skill-ico/team-work.svg);
+  }
+  &.ico-creative::before {
+    background-image: url(../images/ico/skill-ico/creative.svg);
+  }
+  &.ico-learn::before {
+    background-image: url(../images/ico/skill-ico/learn.svg);
+  }
+  &.ico-scrum::before {
+    background-image: url(../images/ico/skill-ico/scrum.png);
+  }
+}
+
+.soft-skill-block {
+  padding-left: 40px;
+  margin: 0 auto;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+}

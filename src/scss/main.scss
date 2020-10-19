@@ -1,0 +1,33 @@
+@import 'normalize';
+@import './helpers/variables';
+@import './helpers/mixins';
+@import 'fonts';
+@import 'base';
+
+//header
+@import './page-header/page-header';
+@import './page-header/page-nav';
+
+//sidebar
+@import './left-sidebar/sidebar';
+@import './left-sidebar/section-explorer';
+@import './left-sidebar/section-contact';
+@import './left-sidebar/section-hard-skill';
+@import './left-sidebar/section-soft-skill';
+@import './left-sidebar/section-lenguages';
+
+//main-content
+@import './main-content/content';
+@import './main-content/content-headers';
+@import './main-content/greeting';
+@import './main-content/worck_experience';
+@import './main-content/project';
+@import './main-content/hobbies';
+
+//footer
+@import './footer/page-footer';
+
+//modal-nav-mobile
+@import './modal-nav-mobile/modal-nav-mobile';
+//selectItem plugin
+@import './select-item-plugin/select-item-plugin';

@@ -1,0 +1,72 @@
+.section-explorer {
+  position: relative;
+  padding-top: 1.25rem;
+  padding-bottom: 1.875rem;
+
+  &-title {
+    @include font-settings(1.2rem, 1.2, 500, $nav-font-color);
+    text-transform: uppercase;
+    padding-left: 2.8125rem;
+    margin-bottom: 0.9375rem;
+  }
+}
+
+.explorer-nav {
+  visibility: hidden;
+  @media screen and (min-width: 1024px) {
+    visibility: visible;
+  }
+  position: absolute;
+  top: 20px;
+  left: -50px;
+
+  &_list {
+    max-width: 50px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &_item {
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-bottom: 1.875rem;
+    }
+  }
+  &_ico {
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    &.ico-file {
+      background-image: url(../images/ico/file-ico.png);
+    }
+    &.ico-serch {
+      background-image: url(../images/ico/magnifying-search-lenses-tool.png);
+    }
+    &.ico-gitbranch {
+      background-image: url(../images/ico/gitbranch-ico.png);
+    }
+    &.ico-bugs {
+      background-image: url(../images/ico/bug_icon.png);
+    }
+    &.ico-plugins {
+      background-image: url(../images/ico/plugin-ico.png);
+    }
+  }
+}
+
+.avatar-block {
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.avatar {
+  margin-bottom: 20px;
+  &-title {
+    @include font-settings(1.2rem, 1.2, 500, $avatar-title);
+    text-transform: uppercase;
+    text-align: center;
+  }
+}

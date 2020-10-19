@@ -1,0 +1,25 @@
+.content {
+  width: 100%;
+  padding-left: 0.9375rem;
+}
+
+.content-section-header {
+  @include font-settings(1rem, 1.2, 600, $deco-color-content-headers);
+  text-transform: uppercase;
+  width: 100%;
+  display: block;
+  background: linear-gradient(
+    217deg,
+    rgba(80, 79, 79, 0),
+    rgba(80, 88, 104, 0.8) 70.71%
+  );
+  padding: 0.625rem 0rem 0.625rem 1.25rem;
+  margin-bottom: 0.625rem;
+}
+
+.contentline-text {
+  @include font-settings(1rem, 1.5rem, 500, $deco-color-contentline-text);
+}
+.contentline-linck {
+  color: $contentline-linck-color;
+}

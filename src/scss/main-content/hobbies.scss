@@ -1,0 +1,8 @@
+.hobbies {
+  @media screen and (min-width: $tablet-bp-min) {
+    padding: 0.625rem 0px 0.625rem 1.25rem;
+  }
+  & p {
+    text-indent: 0em;
+  }
+}

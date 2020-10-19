@@ -1,0 +1,43 @@
+.inumerator-list {
+  list-style-type: none;
+  counter-reset: my-counter;
+
+  &_item {
+    &:not(:last-child) {
+      margin-bottom: 0.375rem;
+    }
+    &::before {
+      @media screen and (min-width: $tablet-bp-min) {
+        content: counter(my-counter);
+        counter-increment: my-counter;
+        @include font-settings(1rem, 1.2, 400, $deco-inumerator-content);
+        margin-right: 1.25rem;
+      }
+    }
+  }
+}
+
+.greeting {
+  &-header {
+    display: inline-block;
+    @include font-settings(1rem, 1.2, 600, $deco-color-content-headers);
+    letter-spacing: 1.2px;
+    &--first {
+      color: $deco-color-content-headers_first;
+    }
+    &--second {
+      color: $deco-color-content-headers_second;
+    }
+    &--last {
+      color: $deco-color-content-headers_last;
+    }
+  }
+
+  &-contentline {
+    display: inline-block;
+    @include font-settings(1rem, 1.2, 500, $deco-color-contentline-greeting);
+    &-text {
+      color: $deco-color-contentline-text;
+    }
+  }
+}

@@ -1,0 +1,254 @@
+$toggle-size: 40px;
+$toggle-line-color: #696969;
+$toggle-line-focus-color: #696969;
+$toggle-line-size: $toggle-size/8;
+$toggle-line-angle: 405deg;
+$toggle-anim-speed: 0.9s;
+$modal-time-open-close: 1s;
+$bg-color-modal: #c6c8cc;
+$modal-linck-hover-color: #383a3e;
+$modal-linck-nav-font-color: #d6d6d6;
+
+//modal windows views
+.modal-nav-mobile {
+  @media screen and (max-width: $mobile-bp-max) {
+    transform: translateY(-100%);
+    position: fixed;
+    display: flex;
+
+    justify-content: space-between;
+    height: 50px;
+    padding: 5px 10px 0px 10px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+    background-color: $bg-color-modal;
+
+    &_item {
+      display: block;
+      width: 40px;
+      height: 40px;
+
+      transition-property: transform;
+      transition-duration: 0.4s;
+
+      &:hover,
+      :focus {
+        transform: scale(1.2);
+      }
+      &-link {
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        background-color: transparent;
+        cursor: pointer;
+        &--ico-hardskill {
+          background-image: url(../images/ico/mobile-modal-ico/hard-skill-ico.png);
+        }
+
+        &--ico-softskill {
+          background-image: url(../images/ico/mobile-modal-ico/soft-skill-ico.png);
+        }
+        &--ico-portfolio {
+          background-image: url(../images/ico/mobile-modal-ico/portfolio-ico.png);
+        }
+        &--ico-experience {
+          background-image: url(../images/ico/mobile-modal-ico/experience.png);
+        }
+        &--ico-contact {
+          background-image: url(../images/ico/mobile-modal-ico/contact-ico.png);
+        }
+      }
+    }
+  }
+}
+
+//modal windows controls class
+.mob-nav-modal-open {
+  .modal-nav-mobile {
+    animation: mob-nav-modal-animation-open $modal-time-open-close ease-in-out;
+    transform: translateY(0);
+  }
+}
+.mob-nav-modal-close {
+  .modal-nav-mobile {
+    animation: mob-nav-modal-animation-close $modal-time-open-close ease-in-out;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes mob-nav-modal-animation-close {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes mob-nav-modal-animation-open {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+//btn control modal
+
+.mobile-button-nav-block {
+  @media screen and (max-width: $mobile-bp-max) {
+    display: block;
+  }
+  display: none;
+  position: fixed;
+  top: 50px;
+  right: 0px;
+  z-index: 999;
+}
+
+.btn-toggle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  padding: 12px;
+  background-color: transparent;
+  border-color: transparent;
+  outline: none;
+  transform: translateZ(0);
+  transition: transform 0.1s ease-out;
+  user-select: none;
+  cursor: pointer;
+  &:active {
+    transform: translateY(4px);
+  }
+
+  &:focus .line:after {
+    background-color: $toggle-line-focus-color;
+  }
+}
+
+.line {
+  display: block;
+  width: $toggle-size;
+  padding: $toggle-line-size/2;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: $toggle-line-size;
+    background-color: $toggle-line-color;
+    border-radius: 2px;
+    transform: translateZ(0) rotate(0);
+    transition: background-color 0.2s ease-out;
+  }
+
+  .open & {
+    @for $i from 1 through 2 {
+      &:nth-child(#{$i}) {
+        animation: jump-#{$i} $toggle-anim-speed forwards ease;
+        &:after {
+          animation: line-#{$i} $toggle-anim-speed forwards ease-in-out;
+        }
+      }
+    }
+  }
+
+  .close & {
+    @for $i from 1 through 2 {
+      &:nth-child(#{$i}) {
+        animation: jump-#{$i} $toggle-anim-speed reverse ease;
+        &:after {
+          animation: line-#{$i} $toggle-anim-speed reverse ease-in-out;
+        }
+      }
+    }
+  }
+
+  .open &,
+  .close & {
+    &:nth-child(3) {
+      animation: jump-3 $toggle-anim-speed forwards ease-out;
+    }
+  }
+}
+
+@keyframes line-1 {
+  10% {
+    transform: translateZ(0) rotate(0);
+  }
+  80% {
+    transform: translateZ(0) rotate($toggle-line-angle - 10);
+  }
+  90%,
+  100% {
+    transform: translateZ(0) rotate($toggle-line-angle);
+  }
+}
+
+@keyframes line-2 {
+  10% {
+    transform: translateZ(0) rotate(0);
+  }
+  20% {
+    transform: translateZ(0) rotate(10deg);
+  }
+  90%,
+  100% {
+    transform: translateZ(0) rotate(-$toggle-line-angle);
+  }
+}
+
+@keyframes jump-1 {
+  10% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-$toggle-line-size * 12);
+  }
+  90%,
+  100% {
+    transform: translateY(-$toggle-line-size * 1);
+  }
+}
+
+@keyframes jump-2 {
+  10% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-$toggle-line-size * 10);
+  }
+  85%,
+  100% {
+    transform: translateY(-$toggle-line-size * 3);
+  }
+}
+
+@keyframes jump-3 {
+  10% {
+    transform: translateY(-$toggle-line-size * 1) rotate(15deg);
+  }
+  30% {
+    transform: translateY(-$toggle-line-size * 4) rotate(-10deg);
+  }
+  50% {
+    transform: translateY($toggle-line-size) rotate(5deg);
+  }
+  80% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  50% {
+    box-shadow: rgba(lighten($toggle-line-color, 10%), 0.4) 0 0 2px 2px;
+  }
+}

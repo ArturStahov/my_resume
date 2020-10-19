@@ -1,0 +1,24 @@
+.nav-list {
+  display: none;
+  @media screen and (min-width: $tablet-bp-min) {
+    display: flex;
+    justify-content: flex-start;
+
+    &_item {
+      display: block;
+      padding: 10px 30px 10px 30px;
+      background-color: transparent;
+      transition-property: background-color;
+      transition-duration: 0.3s;
+      cursor: pointer;
+      &:hover,
+      :focus {
+        background-color: $nav-hover-color;
+      }
+    }
+
+    &_item-link {
+      @include font-settings(0.8rem, 1.2, 500, $nav-font-color);
+    }
+  }
+}

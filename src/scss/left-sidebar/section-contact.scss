@@ -1,0 +1,61 @@
+.section-contact {
+  padding-bottom: 1.875rem;
+}
+
+.contact-block {
+  width: max-content;
+  margin: 0 auto;
+}
+
+.contact-block_linck {
+  display: block;
+  position: relative;
+  width: max-content;
+  margin-bottom: 0.9375rem;
+  @include font-settings(1em, 1.2, 500, $first-font-color);
+  &::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -40px;
+    display: block;
+    width: 25px;
+    height: 25px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  &.map-linck::before {
+    background-image: url(../images/ico/unnamed.png);
+  }
+  &.mail-linck::before {
+    background-image: url(../images/ico/iitmail1.png);
+  }
+  &.tel-linck::before {
+    background-image: url(../images/ico/Logo1telega.png);
+  }
+}
+
+.contact-block_social-link {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.contact-block_linck-bt {
+  width: 40px;
+  height: 40px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  &.github-linck {
+    background-image: url(../images/ico/gitcola_102985.png);
+  }
+  &.linkedin-linck {
+    background-image: url(../images/ico/600px-Linkedin_icon.png);
+  }
+  &:not(:last-child) {
+    margin-right: 1.25rem;
+  }
+}
