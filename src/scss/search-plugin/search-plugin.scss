@@ -1,0 +1,46 @@
+$search-plugin-input-border-color: #747171;
+$search-time-open-close: 1s;
+
+.search-plugin {
+  transform: scaleX(0);
+  position: absolute;
+  top: 65px;
+  left: 50px;
+  &_input {
+    padding-left: 5px;
+    width: 150px;
+    height: 35px;
+    border: 2px solid $search-plugin-input-border-color;
+    border-radius: 5px;
+  }
+}
+
+.search-plugin_open {
+  animation: search-plugin-animation-open $search-time-open-close ease-in-out;
+
+  transform-origin: 100% 50%;
+  transform: scaleX(1);
+}
+.search-plugin_close {
+  animation: search-plugin-animation-close $search-time-open-close ease-in-out;
+
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+}
+
+@keyframes search-plugin-animation-open {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes search-plugin-animation-close {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}

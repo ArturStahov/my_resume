@@ -1,7 +1,7 @@
 import './scss/main.scss';
 import { mobileNavModal } from './js/mobile-nav-modal.js'
 import { SelectItemPlugin } from './js/selectItemPlugin.js'
-
+import { SearchPlagin } from './js/search-plagin.js'
 
 
 const mobileNavOptions = {
@@ -17,3 +17,10 @@ const selectPluginOptions = {
 }
 
 const selectItemPlugin = new SelectItemPlugin(selectPluginOptions);
+
+const searchPluginOptions = {
+    btnPluginSelector: '[data-type="search-button"]',
+    searchPluginSelector: '[data-type="search-plugin"]'
+}
+
+const searchPlugin = new SearchPlagin(searchPluginOptions);

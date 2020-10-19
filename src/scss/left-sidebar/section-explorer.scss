@@ -12,6 +12,7 @@
 }
 
 .explorer-nav {
+  position: relative;
   visibility: hidden;
   @media screen and (min-width: 1024px) {
     visibility: visible;
@@ -39,6 +40,12 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    &:hover,
+    :focus {
+      transform: scale(1.2);
+    }
     &.ico-file {
       background-image: url(../images/ico/file-ico.png);
     }
