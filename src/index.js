@@ -2,6 +2,7 @@ import './scss/main.scss';
 import { mobileNavModal } from './js/mobile-nav-modal.js'
 import { SelectItemPlugin } from './js/selectItemPlugin.js'
 import { SearchPlagin } from './js/search-plagin.js'
+import { GalleryPlugin } from './js/gallery-plugin.js'
 
 
 const mobileNavOptions = {
@@ -24,3 +25,8 @@ const searchPluginOptions = {
 }
 
 const searchPlugin = new SearchPlagin(searchPluginOptions);
+
+const galleryPluginOptions = {
+    selectorGallery: '[data-type="gallery"]',
+}
+const galleryPlugin = new GalleryPlugin(galleryPluginOptions)

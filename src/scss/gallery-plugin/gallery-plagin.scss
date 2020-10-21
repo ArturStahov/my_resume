@@ -1,0 +1,112 @@
+$gallery-bg-color: rgba(80, 88, 104, 0.8);
+$gallery-overlay-hover: rgba(29, 26, 26, 0.856);
+
+.gallery-container {
+  display: grid;
+  grid-gap: 8px;
+  background-color: $gallery-bg-color;
+  grid-template-areas:
+    'one two three'
+    'four two three'
+    'four seven seven'
+    'six six five';
+
+  grid-template-columns: 25% 1fr 30%;
+  grid-template-rows: 115px 78px 185px 165px;
+}
+
+.galery-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.gallery-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  &:hover .gallery-overlay_ico-view {
+    opacity: 1;
+  }
+
+  &:hover,
+  :focus {
+    background-color: $gallery-overlay-hover;
+  }
+  &_ico-view {
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/ico/magnifying-search-lenses-tool.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition-property: opacity;
+    transition-duration: 0.3s;
+  }
+}
+
+.galery-item {
+  position: relative;
+  background-color: #699b62;
+
+  transition-property: color;
+  transition-duration: 0.3s;
+
+  &:hover,
+  :focus {
+    animation: wobble-hor-bottom 0.8s both;
+  }
+  &.one {
+    grid-area: one;
+  }
+  &.two {
+    grid-area: two;
+  }
+  &.three {
+    grid-area: three;
+  }
+  &.four {
+    grid-area: four;
+  }
+  &.five {
+    grid-area: five;
+  }
+  &.six {
+    grid-area: six;
+  }
+  &.seven {
+    grid-area: seven;
+  }
+}
+
+@keyframes wobble-hor-bottom {
+  0%,
+  100% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
+  15% {
+    transform: translateX(-10px) rotate(-3deg);
+  }
+  30% {
+    transform: translateX(5px) rotate(3deg);
+  }
+  45% {
+    transform: translateX(-5px) rotate(-1.6deg);
+  }
+  60% {
+    transform: translateX(3px) rotate(1.4deg);
+  }
+  75% {
+    transform: translateX(-2px) rotate(-0.2deg);
+  }
+}
