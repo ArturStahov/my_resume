@@ -21,6 +21,7 @@ $gallery-overlay-hover: rgba(29, 26, 26, 0.856);
   height: 100%;
 }
 .gallery-overlay {
+  pointer-events: none;
   display: flex;
   justify-content: center;
   align-items: center;

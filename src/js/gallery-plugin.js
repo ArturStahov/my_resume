@@ -26,14 +26,15 @@ export class GalleryPlugin {
         this.galleryRef.addEventListener('click', this._handlerGallery.bind(this))
     }
     _handlerGallery(event) {
+
         let imgRef = null;
         let datatype = event.target.dataset.type;
-
-        if (datatype === 'galery-overlay') {
-            imgRef = event.target.nextElementSibling;
-            this.modalImgRef.src = imgRef.src;
+        if (datatype === 'gallery-image') {
+            let imgSrc = event.target.src;
+            this.modalImgRef.src = imgSrc;
             MicroModal.show('modal-content'); // [1]
         }
+
         if (datatype === 'galery-ico-view') {
             imgRef = event.target.parentNode.nextElementSibling;
             this.modalImgRef.src = imgRef.src;

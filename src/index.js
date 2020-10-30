@@ -3,6 +3,7 @@ import { mobileNavModal } from './js/mobile-nav-modal.js'
 import { SelectItemPlugin } from './js/selectItemPlugin.js'
 import { SearchPlagin } from './js/search-plagin.js'
 import { GalleryPlugin } from './js/gallery-plugin.js'
+import { SendMessagePlugin } from './js/send-message-plugin.js'
 
 
 const mobileNavOptions = {
@@ -30,3 +31,10 @@ const galleryPluginOptions = {
     selectorGallery: '[data-type="gallery"]',
 }
 const galleryPlugin = new GalleryPlugin(galleryPluginOptions)
+
+
+const sendMessagePluginOptions = {
+    selectorForm: '[data-type="form-message"]',
+    selectorResult: '[data-type="message-result"]'
+}
+const sendMessagePlugin = new SendMessagePlugin(sendMessagePluginOptions)

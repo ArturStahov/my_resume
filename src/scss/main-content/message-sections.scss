@@ -1,0 +1,44 @@
+.message {
+  @media screen and (min-width: $tablet-bp-min) {
+    padding: 0.625rem 0px 0.625rem 1.25rem;
+  }
+  & p {
+    text-indent: 0em;
+  }
+}
+.message-section_text {
+  margin-bottom: 20px;
+}
+
+.form-message {
+  display: flex;
+  justify-content: flex-start;
+  min-width: 300px;
+  width: 400px;
+  flex-wrap: wrap;
+  margin: 0 auto 1.875rem;
+  &_input {
+    padding-left: 10px;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+  &_textarea {
+    padding: 5px 10px 5px 10px;
+
+    margin-bottom: 10px;
+    width: 100%;
+    height: 200px;
+    resize: none;
+  }
+  &_button-submit {
+    margin: 0 auto;
+    width: 200px;
+    height: 30px;
+  }
+}
+
+.message-result {
+  @include font-settings(1rem, 1.2, 700, $form-result-message);
+  text-align: center;
+}
