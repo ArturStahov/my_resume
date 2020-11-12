@@ -22,7 +22,9 @@ const selectItemPlugin = new SelectItemPlugin(selectPluginOptions);
 
 const searchPluginOptions = {
     btnPluginSelector: '[data-type="search-button"]',
-    searchPluginSelector: '[data-type="search-plugin"]'
+    searchPluginSelector: '[data-type="search-plugin"]',
+    selectorInput: '[data-type="search-input"]'
+
 }
 
 const searchPlugin = new SearchPlagin(searchPluginOptions);

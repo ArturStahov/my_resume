@@ -44,3 +44,9 @@ $search-time-open-close: 1s;
     transform: scaleX(0);
   }
 }
+
+.searched-word {
+  background: rgb(219, 243, 6);
+  color: rgb(20, 20, 20);
+  font-weight: 600;
+}
