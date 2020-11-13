@@ -4,6 +4,7 @@ import { SelectItemPlugin } from './js/selectItemPlugin.js'
 import { SearchPlagin } from './js/search-plagin.js'
 import { GalleryPlugin } from './js/gallery-plugin.js'
 import { SendMessagePlugin } from './js/send-message-plugin.js'
+import { ThemeChangePlugin } from './js/themeChangePlugin.js'
 
 
 const mobileNavOptions = {
@@ -40,3 +41,8 @@ const sendMessagePluginOptions = {
     selectorResult: '[data-type="message-result"]'
 }
 const sendMessagePlugin = new SendMessagePlugin(sendMessagePluginOptions)
+
+const themeChangePluginOptions = {
+    btnSelector: '[data-type="button-plugin"]'
+}
+const themeChangePlugin = new ThemeChangePlugin(themeChangePluginOptions)

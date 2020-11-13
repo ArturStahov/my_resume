@@ -37,14 +37,8 @@ export class SearchPlagin {
     }
 
     handleInputOnChange(event) {
-        const { target } = event;
-        const { value } = target;
-        console.log(this.arrayList)
+        const { value } = event.target;
         this.arrayList.forEach(descriptionRef => this.searchInText(descriptionRef, value))
-    }
-
-    wrapSearchedText(text) {
-        return `<span class="searched-word">${text}</span>`
     }
 
     searchInText(element, searchedText) {
@@ -56,7 +50,7 @@ export class SearchPlagin {
             return;
         }
 
-        element.innerHTML = textContent.replace(regExp, this.wrapSearchedText(searchedText))
+        element.innerHTML = textContent.replace(regExp, `<span class="searched-word">${searchedText}</span>`)
     }
 
 }

@@ -1,0 +1,26 @@
+$dark-theme-page-color: #282c34;
+$light-theme-page-color: #dbeef3;
+$light-theme-font-color: #292828;
+$dark-theme-font-color: #d6d6d6;
+$dark-theme-sidebar-color: #21252b;
+$light-theme-sidebar-color: #42464e;
+
+.dark-theme {
+  background-color: $dark-theme-page-color;
+}
+.light-theme {
+  background-color: $light-theme-page-color;
+}
+.light-theme-text {
+  color: $light-theme-font-color;
+}
+.dark-theme-text {
+  color: $dark-theme-font-color;
+}
+
+.dark-theme-sidebar {
+  background-color: $dark-theme-sidebar-color;
+}
+.light-theme-sidebar {
+  background-color: $light-theme-sidebar-color;
+}
