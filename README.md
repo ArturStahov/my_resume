@@ -8,5 +8,6 @@
 - adaptive design (mobile ,tab,desktop)
 - micro-modal
 - firebase API
+- handlebars
 
 site-link:https://arturstahov.github.io/my_resume/
